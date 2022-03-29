@@ -7,7 +7,8 @@
 
 <script>
 export default {
-    name: "navBar"
+  titleFilms:'',
+  name: "navBar"
 };
 </script>
 
