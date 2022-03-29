@@ -16,7 +16,6 @@
             </li>
             <li>
                 <!-- <i class="fa-solid fa-star" v-bind:class="{bgy: 1 < el.vote_average, bgg}" ></i> -->
-                <font-awesome-icon icon="fa-solid fa-star" />
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
