@@ -1,7 +1,7 @@
 <template>
-  <form @submit.prevent="">
+  <form @submit.prevent="" @click="$emit('search', titleFilms)">
     <input id="nameFilms" type="text" v-model="titleFilms"/>
-    <button type="button" @click="$emit(search, titleFilms)">x</button>
+    <button type="button">x</button>
   </form>
 </template>
 

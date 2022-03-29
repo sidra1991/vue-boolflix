@@ -1,6 +1,7 @@
 <template>
-    <navBar>
     <div>
+        <navBar @search="model"/>
+        <!-- <p>{{prova}}</p> -->
         <ul v-for="(el, index) in this.arrCard"  :key="index" >
             <li>
                 {{el.title}}
@@ -25,13 +26,24 @@ import axios from 'axios'
 
 export default {
     components: {
-        navBar,
+        navBar
     },
     name:'mainVision',
     data (){
         return{
+            prova:'',
             arrCard:'',
             titleMedia: 'naruto'
+        }
+    },
+
+    computed: {
+        model (text){
+            console.log(text)
+            console.log(this.titleMedia)
+            return{
+                titleMedia=text
+            }
         }
     },
     created () {
