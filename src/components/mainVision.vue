@@ -1,7 +1,7 @@
 <template>
     <div>
         <navBar @search="model"/>
-        <!-- <p>{{prova}}</p> -->
+        <p>{{prova}}</p>
         <ul v-for="(el, index) in this.arrCard"  :key="index" >
             <li>
                 {{el.title}}
@@ -36,14 +36,15 @@ export default {
             titleMedia: 'naruto'
         }
     },
-
-    computed: {
-        model (text){
-            console.log(text)
-            console.log(this.titleMedia)
-            return{
-                titleMedia=text
-            }
+    methods: {
+        model(txt){
+            this.prova=txt
+            this.titleMedia=txt
+            console.log(this.titleMedia);
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=2a1eafb77e5173892c5f55c2d7d7a8c8&query=${this.titleMedia}`)
+            .then((response) => {
+                this.arrCard = response.data.results
+            })
         }
     },
     created () {
@@ -54,8 +55,8 @@ export default {
         // console.log('secondo -------', response.data)
         // console.log('terzo-----', response.data.results  )
         // console.log('quarto------', response.data.results[0])
-    })
-  }
+        })
+    },
 }
 
 
