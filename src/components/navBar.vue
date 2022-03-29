@@ -1,16 +1,15 @@
 <template>
-    <div>
-        <input type="text">
-        <button type="button" >x</button>
-    </div>
+  <form @submit.prevent="">
+    <input id="nameFilms" type="text" v-model="titleFilms"/>
+    <button type="button" @click="$emit(search, titleFilms)">x</button>
+  </form>
 </template>
 
 <script>
 export default {
-    name:'navBar'
-}
+    name: "navBar"
+};
 </script>
 
 <style>
-
 </style>

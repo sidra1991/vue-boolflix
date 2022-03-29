@@ -1,4 +1,5 @@
 <template>
+    <navBar>
     <div>
         <ul v-for="(el, index) in this.arrCard"  :key="index" >
             <li>
@@ -18,8 +19,14 @@
 </template>
 
 <script>
+
+import navBar from '@/components/navBar.vue';
 import axios from 'axios'
+
 export default {
+    components: {
+        navBar,
+    },
     name:'mainVision',
     data (){
         return{
