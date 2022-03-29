@@ -15,7 +15,12 @@
                 {{el.original_language}}
             </li>
             <li>
-                {{el.vote_average}}
+                <!-- <i class="fa-solid fa-star" v-bind:class="{bgy: 1 < el.vote_average, bgg}" ></i> -->
+                <font-awesome-icon icon="fa-solid fa-star" />
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
             </li>
         </ul>
         <p>-------------------------------------------------------------</p>
@@ -94,4 +99,12 @@ export default {
 </script>
 
 <style>
+.bgY{
+    color: gold;
+    font-size: 2rem;
+}
+.bgg{
+    color: darkgray;
+    font-size: 2rem;
+}
 </style>
