@@ -1,18 +1,21 @@
 <template>
   <div>
       sono una carta film
-      <ul v-for="(el, index) in this.arrCardFilm"  :key="index">
+      <ul v-for="(el, index) in arrCardFilm"  :key="index">
         <li>
-          qui va il titolo
+          <img :src="immage+el.backdrop_path" :alt="el.title">
         </li>
         <li>
-          qui va il titolo originale
+          {{el.title}}
         </li>
         <li>
-          qui va la lingua
+          {{el.original_title}}
         </li>
         <li>
-          qui va il voto {{this.arrCardFilm[0]}}
+          {{el.original_language}}
+        </li>
+        <li>
+          {{el.vote_average}}
         </li>
       </ul>
   </div>
@@ -20,7 +23,12 @@
 
 <script>
 export default {
-    props: {
+  data () {
+    return{
+      immage:'https://image.tmdb.org/t/p/w300/'
+    }
+  },
+  props: {
     arrCardFilm:Array,
   },
 }

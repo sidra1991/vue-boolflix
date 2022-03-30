@@ -5,9 +5,10 @@
         sono la sezione dei film
         <cardFilmsOriginal :arrCardFilm= 'arrCardFilm'/>
       </section>
+      <hr>
       <section>
         sono la sezione delle serie tv
-        <cardSerieTvOriginal />
+        <cardSerieTvOriginal :arrCardTv='arrCardTv'/>
       </section>
       <!-- {{this.arrCardFilm}} -->
   </main>
@@ -25,6 +26,7 @@ export default {
   },
   props: {
     arrCardFilm:Array,
+    arrCardTv:Array
   }
 }
 </script>

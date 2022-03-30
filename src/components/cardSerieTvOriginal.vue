@@ -1,18 +1,22 @@
 <template>
   <div>
-      sono una carta serie tv
-      <ul>
+      sono una carta serie Tv
+      <ul v-for="(el, index) in arrCardTv"  :key="index">
         <li>
-          qui va il titolo
+          <img :src="immage+el.backdrop_path" :alt="el.name">
         </li>
         <li>
-          qui va il titolo originale
+          {{el.name}}
         </li>
         <li>
-          qui va la lingua
+          {{el.original_name}}
         </li>
         <li>
-          qui va il voto
+          {{el.original_language}}
+        </li>
+        <li>
+          <!-- {{el.vote_average}} -->
+          {{el}}
         </li>
       </ul>
   </div>
@@ -20,7 +24,14 @@
 
 <script>
 export default {
-
+  data () {
+    return{
+      immage:'https://image.tmdb.org/t/p/w300/'
+    }
+  },
+  props: {
+    arrCardTv:Array,
+  },
 }
 </script>
 
