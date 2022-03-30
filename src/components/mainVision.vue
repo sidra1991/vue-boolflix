@@ -1,5 +1,5 @@
 <template>
-    <div>
+     <div>
         <navBar @search="model"/>
         <p>{{prova}}</p>
         <ul v-for="(el, index) in this.arrCard"  :key="index">
@@ -44,7 +44,6 @@
 </template>
 
 <script>
-
 import navBar from '@/components/navBar.vue';
 import axios from 'axios'
 
