@@ -15,8 +15,7 @@
           {{el.original_language}}
         </li>
         <li>
-          <!-- {{el.vote_average}} -->
-          {{el}}
+          {{el.vote_average}}
         </li>
       </ul>
   </div>

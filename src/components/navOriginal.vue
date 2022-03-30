@@ -1,23 +1,23 @@
 <template>
-  <form action="" @submit.prevent="" @click="$emit('titleSearch', search)">
-      <input type="text"
-      id="search"
-      name="search"
-      v-model="search"
-    >
-    <button type="button"  >
-      x
-    </button>
-  {{ search }}
-  </form>
+  <div>
+    <form @submit.prevent="">
+      <input id="nameFilms" type="text" v-model="titleFilms"/>
+      <button type="button" @click="$emit(search, titleFilms)">x</button>
+    </form>
+    {{titleFilms}}
+  </div>
 </template>
 
 <script>
 export default {
+    name: 'navOriginal',
     data () {
     return{
-      search:''
+      titleFilms:''
     }
+  },
+  con (){
+    console.log('io parto');
   }
 }
 </script>

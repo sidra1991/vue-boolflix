@@ -1,8 +1,9 @@
 <template>
   <div>
     <!-- <mainVision  /> -->
-    <navOriginal  @search="titleSearch"/>
+    <navOriginal  @search='titleSearch'/>
     {{prova}}
+    {{titleSearch}}
     <mainOriginal :arrCardFilm= 'arrCardFilm' :arrCardTv='arrCardTv' />
     <footerOriginal />
   </div>
@@ -24,8 +25,8 @@ export default {
    data (){
         return{
           prova:'',
-          arrCardTv:'',
-          arrCardFilm:'',
+          arrCardTv:[],
+          arrCardFilm:[],
           titleMedia: 'naruto'
         }
   },
@@ -45,7 +46,7 @@ methods: {
   titleSearch (txt){
       this.prova = txt
       console.log(txt);
-      // this.titleMedia=txt
+      this.titleMedia=txt
       // console.log(this.titleMedia);
       // axios.get(`https://api.themoviedb.org/3/search/movie?api_key=2a1eafb77e5173892c5f55c2d7d7a8c8&query=${this.titleMedia}`)
       // .then((response) => {
