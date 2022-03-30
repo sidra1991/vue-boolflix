@@ -1,6 +1,6 @@
 <template>
   <div>
-      sono una carta film
+      <h2>serie tv</h2>
       <ul v-for="(el, index) in arrCardFilm"  :key="index">
         <li>
           <img :src="immage+el.backdrop_path" :alt="el.title">
@@ -12,7 +12,8 @@
           {{el.original_title}}
         </li>
         <li>
-          {{el.original_language}}
+           <img :src="flag+el.original_language+png" alt="">
+            {{el.original_language}}
         </li>
         <li>
           {{el.vote_average}}
@@ -25,6 +26,8 @@
 export default {
   data () {
     return{
+      flag:'https://flagcdn.com/16x12/',
+      png:'.png',
       immage:'https://image.tmdb.org/t/p/w300/'
     }
   },

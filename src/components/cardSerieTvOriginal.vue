@@ -1,6 +1,6 @@
 <template>
   <div>
-      sono una carta serie Tv
+    <h2>serie tv</h2>
       <ul v-for="(el, index) in arrCardTv"  :key="index">
         <li>
           <img :src="immage+el.backdrop_path" :alt="el.name">
@@ -12,6 +12,7 @@
           {{el.original_name}}
         </li>
         <li>
+          <img :src="flag+el.original_language+png" alt="">
           {{el.original_language}}
         </li>
         <li>
