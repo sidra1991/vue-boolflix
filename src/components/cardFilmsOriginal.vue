@@ -3,7 +3,9 @@
       <h2>film</h2>
       <ul v-for="(el, index) in arrCardFilm"  :key="index">
         <li>
-          <img :src="immage+el.backdrop_path" :alt="el.title">
+          <img :src="immage+el.backdrop_path" :alt="el.title" v-if="el.backdrop_path != null">
+          <div class="ssimmage" v-else></div>
+
         </li>
         <li>
           {{el.title}}
@@ -16,7 +18,6 @@
             {{el.original_language}}
         </li>
         <li>
-          {{el.vote_average}}
           <span v-for="(star, index) in Math.ceil(el.vote_average /2)" :key="index" > ★ </span>
           <span v-for="(star, index) in  5 - (Math.ceil(el.vote_average /2))" :key="index" > ☆ </span>
         </li>
@@ -40,5 +41,9 @@ export default {
 </script>
 
 <style>
-
+  .ssimmage {
+    height: 100px;
+    widows: 100px;
+    background: black;
+  }
 </style>
