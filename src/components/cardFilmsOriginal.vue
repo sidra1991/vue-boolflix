@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h2>serie tv</h2>
+      <h2>film</h2>
       <ul v-for="(el, index) in arrCardFilm"  :key="index">
         <li>
           <img :src="immage+el.backdrop_path" :alt="el.title">
@@ -17,6 +17,8 @@
         </li>
         <li>
           {{el.vote_average}}
+          <span v-for="(star, index) in Math.ceil(el.vote_average /2)" :key="index" > ★ </span>
+          <span v-for="(star, index) in  5 - (Math.ceil(el.vote_average /2))" :key="index" > ☆ </span>
         </li>
       </ul>
   </div>
@@ -28,12 +30,12 @@ export default {
     return{
       flag:'https://flagcdn.com/16x12/',
       png:'.png',
-      immage:'https://image.tmdb.org/t/p/w300/'
+      immage:'https://image.tmdb.org/t/p/w300/',
     }
   },
   props: {
     arrCardFilm:Array,
-  },
+  }
 }
 </script>
 

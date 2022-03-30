@@ -17,6 +17,8 @@
         </li>
         <li>
           {{el.vote_average}}
+          <span v-for="(star, index) in Math.ceil(el.vote_average /2)" :key="index" > ★ </span>
+          <span v-for="(star, index) in 5 - (Math.ceil(el.vote_average /2))" :key="index" > ☆ </span>
         </li>
       </ul>
   </div>
