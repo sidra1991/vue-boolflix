@@ -1,8 +1,8 @@
 <template>
   <div>
-    <form @submit.prevent="">
-      <input id="nameFilms" type="text" v-model="titleFilms"/>
-      <button type="button" @click="$emit(search, titleFilms)">x</button>
+    <form @submit.prevent="" @keyup.enter="$emit(titleFilms)">
+      <input type="text" v-model="titleFilms"/>
+      <button type="button" @click="$emit( 'ric', titleFilms)" >x</button>
     </form>
     {{titleFilms}}
   </div>
@@ -13,12 +13,9 @@ export default {
     name: 'navOriginal',
     data () {
     return{
-      titleFilms:''
+      titleFilms:'naruto'
     }
   },
-  con (){
-    console.log('io parto');
-  }
 }
 </script>
 

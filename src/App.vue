@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- <mainVision  /> -->
-    <navOriginal  @search='titleSearch'/>
+    <navOriginal  @ric='cry'/>
     {{prova}}
-    {{titleSearch}}
+    <!-- {{titleSearch}} -->
     <mainOriginal :arrCardFilm= 'arrCardFilm' :arrCardTv='arrCardTv' />
     <footerOriginal />
   </div>
@@ -43,7 +43,7 @@ export default {
     })
   },
 methods: {
-  titleSearch (txt){
+  cry (txt){
       this.prova = txt
       console.log(txt);
       this.titleMedia=txt
