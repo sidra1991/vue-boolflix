@@ -12,7 +12,7 @@
           qui va la lingua
         </li>
         <li>
-          qui va il voto {{this.arrCardFilm}}
+          qui va il voto {{this.arrCardFilm[0]}}
         </li>
       </ul>
   </div>

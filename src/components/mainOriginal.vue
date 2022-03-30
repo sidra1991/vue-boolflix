@@ -1,7 +1,7 @@
 <template>
   <main>
       sono il main
-      <section   v-for="(el, index) in this.arrCardfilm"  :key="index" >
+      <section>
         sono la sezione dei film
         <cardFilmsOriginal :arrCardFilm= 'arrCardFilm'/>
       </section>
