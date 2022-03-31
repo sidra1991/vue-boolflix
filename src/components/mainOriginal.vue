@@ -1,12 +1,12 @@
 <template>
   <main>
       <section>
-        film
+        <h2>FILM</h2>
         <cardFilmsOriginal :arrCardFilm= 'arrCardFilm'/>
       </section>
       <hr>
       <section>
-        serie tv
+        <h2>SERIE TV</h2>
         <cardSerieTvOriginal :arrCardTv='arrCardTv'/>
       </section>
   </main>
@@ -32,5 +32,9 @@ export default {
 <style scoped>
   main{
     background-color: gray;
+  }
+
+  h2{
+    text-align: center;
   }
 </style>

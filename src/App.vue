@@ -1,10 +1,10 @@
 <template>
 
-  <div>
+  <body>
     <navOriginal  @ric='cry'/>
     <mainOriginal :arrCardFilm= 'arrCardFilm' :arrCardTv='arrCardTv' />
     <footerOriginal />
-  </div>
+  </body>
 </template>
 
 <script>
@@ -64,6 +64,10 @@ methods: {
 *{
   margin: 0;
   box-sizing: border-box;
+}
+
+body{
+  background-color: gray;
 }
 
 </style>
