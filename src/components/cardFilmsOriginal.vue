@@ -3,8 +3,20 @@
   <div class="container-card">
       <div class="card"  v-for="(el, index) in arrCardFilm"  :key="index" :data-id="el.id">
         <img class="bg-img" :src="immage+el.poster_path" :alt="el.title" v-if="el.backdrop_path != null">
-        <img class="bg-img"  src="https://picsum.photos/300/350" alt="" v-else>
+        <img class="bg-img"  src="https://picsum.photos/300/350" :alt="el.title" v-else>
         <ul>
+          <li>
+            <button class="b-cast" v-on:click="theCast(el)" > show cast </button>
+            <ul v-if="cast.includes(el.id) " >
+                <li v-for="(mon, index) in 5" :key="index" >
+                  <div class="star-tried" >
+                    <img :src="star+moment[index].profile_path" :alt="moment[index].name" v-if="moment[index].profile_path != null">
+                     <img src="https://picsum.photos/50/50" :alt="moment[index].name" v-else>
+                    {{moment[index].name}}
+                  </div>
+                </li>
+            </ul>
+          </li>
           <li>
             <strong>TITOLO:</strong> {{el.title}}
           </li>
@@ -25,13 +37,6 @@
             <strong>TRAMA:</strong>
              {{el.overview}}
           </li>
-          <li>
-            <button v-on:click="theCast(el)" > x </button>
-            <ul v-if="cast.includes(el.id) " >
-                <li> <div>{{moment}}
-                  {{castObjet}} </div> </li>
-            </ul>
-          </li>
         </ul>
       </div>
   </div>
@@ -46,6 +51,7 @@ export default {
       flag:'https://flagcdn.com/16x12/',
       png:'.png',
       immage:'https://image.tmdb.org/t/p/w400/',
+      star:'https://image.tmdb.org/t/p/w45/',
       cast:[],
       castObjet:[],
       moment:[]
@@ -58,14 +64,14 @@ export default {
     theCast (el){
       if(this.cast.includes(el.id) == false ){
         this.cast.push(el.id)
-        console.log('preso bastardo')
         axios.get(`https://api.themoviedb.org/3/movie/${el.id}?api_key=2a1eafb77e5173892c5f55c2d7d7a8c8&append_to_response=credits`)
         .then((credits) => {
-        this.moment = credits.data.credits.cast[0].name
+        this.moment = credits.data.credits.cast
+
         })
       }else {
         this.cast.pop(el.id,1)
-        console.log('eccolo');
+
       }
       this.castObjet.push(this.moment)
 
@@ -78,6 +84,22 @@ export default {
   .center-card {
     display: flex;
     justify-content: center;
+  }
+
+  .star-tried{
+    display: flex;
+    align-items: center;
+  }
+
+  .b-cast {
+    width: 100%;
+    background-color: dimgray;
+    border-radius: 5px;
+    color: ghostwhite;
+  }
+
+  .b-cast:hover{
+    text-shadow: 1px 1px 1px grey;
   }
 
   .container-card {
