@@ -51,7 +51,7 @@ export default {
     left:20px;
     width: 50px;
     height: 30px;
-    background-color: transparent;
+    background-color: lightslategray;
     border-radius: 50px;
     color: silver;
   }
@@ -63,7 +63,7 @@ export default {
     right: 20px;
     width: 75px;
     height: 30px;
-    background-color: transparent;
+    background-color: lightslategray;
     border-radius: 50px;
     color: silver;
   }
@@ -80,6 +80,7 @@ export default {
   }
 
   main{
+    padding-top: 3rem;
     position: relative;
     background-color: gray;
   }
