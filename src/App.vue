@@ -1,5 +1,4 @@
 <template>
-
   <body>
     <navOriginal  @ric='cry'/>
     <mainOriginal :arrCardFilm= 'arrCardFilm' :arrCardTv='arrCardTv' />
@@ -68,6 +67,8 @@ methods: {
 
 body{
   background-color: gray;
+  height: 100vh;
+  overflow:auto;
 }
 
 </style>

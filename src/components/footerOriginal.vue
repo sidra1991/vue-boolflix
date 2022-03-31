@@ -11,5 +11,10 @@ export default {
 </script>
 
 <style>
-
+  footer{
+    height: 3rem;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
 </style>
