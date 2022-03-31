@@ -1,16 +1,14 @@
 <template>
   <main>
-      sono il main
       <section>
-        sono la sezione dei film
+        film
         <cardFilmsOriginal :arrCardFilm= 'arrCardFilm'/>
       </section>
       <hr>
       <section>
-        sono la sezione delle serie tv
+        serie tv
         <cardSerieTvOriginal :arrCardTv='arrCardTv'/>
       </section>
-      <!-- {{this.arrCardFilm}} -->
   </main>
 </template>
 
@@ -31,6 +29,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  main{
+    background-color: gray;
+  }
 </style>

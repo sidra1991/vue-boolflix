@@ -1,10 +1,7 @@
 <template>
 
   <div>
-    <!-- <mainVision  /> -->
     <navOriginal  @ric='cry'/>
-    {{prova}}
-    <!-- {{titleSearch}} -->
     <mainOriginal :arrCardFilm= 'arrCardFilm' :arrCardTv='arrCardTv' />
     <footerOriginal />
   </div>
