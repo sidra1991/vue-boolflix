@@ -2,7 +2,7 @@
 <div class="center-card">
   <div class="container-card">
       <div class="card"  v-for="(el, index) in arrCardTv"  :key="index">
-        <img class="bg-img" :src="immage+el.backdrop_path" :alt="el.title" v-if="el.backdrop_path != null">
+        <img class="bg-img" :src="immage+el.poster_path" :alt="el.title" v-if="el.backdrop_path != null">
         <img class="bg-img"  src="https://picsum.photos/300/350" alt="" v-else>
         <ul>
           <li>

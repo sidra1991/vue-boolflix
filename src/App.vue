@@ -25,7 +25,7 @@ export default {
           prova:'',
           arrCardTv:[],
           arrCardFilm:[],
-          titleMedia: 'naruto'
+          titleMedia: ''
         }
   },
   created (){

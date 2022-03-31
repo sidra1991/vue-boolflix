@@ -2,7 +2,7 @@
 <div class="center-card">
   <div class="container-card">
       <div class="card"  v-for="(el, index) in arrCardFilm"  :key="index">
-        <img class="bg-img" :src="immage+el.backdrop_path" :alt="el.title" v-if="el.backdrop_path != null">
+        <img class="bg-img" :src="immage+el.poster_path" :alt="el.title" v-if="el.backdrop_path != null">
         <img class="bg-img"  src="https://picsum.photos/300/350" alt="" v-else>
         <ul>
           <li>
@@ -68,12 +68,18 @@ export default {
     color: white;
     border: 2px solid white;
     overflow: auto;
+    border-radius: 5px;
   }
 
   ul{
     padding-top: 1rem;
     padding-right: 2rem;
     display: none;
+  }
+
+  li{
+    margin-top: 10px;
+    list-style: none;
   }
 
   .bg-img{
